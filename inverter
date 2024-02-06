@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void inverter(int *num) {
+    int inverso = 0;
+    int x = *num;
+
+
+    if (x < 0)
+        x = -x;
+
+    while (x != 0) {
+        inverso = inverso * 10 + x % 10;
+        x /= 10;
+    }
+
+    *num = inverso;
+}
+
+int main() {
+    int num;
+
+    printf("Digite um numero: ");
+    scanf("%d", &num);
+
+    inverter(&num);
+
+    printf("Numero invertido: %d\n", num);
+
+    return 0;
+}
